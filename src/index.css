@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+/* Fonts are self-hosted (latin subset) so the page doesn't depend on Google Fonts.
+   Fredoka One is no longer on Google Fonts; its successor Fredoka is used at the
+   matching weight/width. */
+@font-face {
+  font-family: 'Fredoka One';
+  src: url('/fonts/fredoka-one.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: url('/fonts/epilogue.woff') format('woff');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('/fonts/oswald.woff') format('woff');
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fugaz One';
+  src: url('/fonts/fugaz-one.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand: #f3274c;
+  --color-sun: #ffd40d;
+  --color-amber: #ffc222;
+  --color-ink: #212121;
+  --color-body: #555555;
+  --color-mist: #f5f8fd;
+  --color-line: #e4e4e4;
+
+  --font-display: 'Fredoka One', cursive;
+  --font-body: 'Epilogue', sans-serif;
+  --font-nav: 'Oswald', sans-serif;
+  --font-fugaz: 'Fugaz One', cursive;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-body text-body antialiased;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@utility container-main {
+  width: 100%;
+  max-width: 1330px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
